@@ -32,11 +32,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = () => {
-  return {};
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, fetchSmurfs)(App);
 
 //Task List:
 //1. Connect the fetchSmurfs actions to the App component.
