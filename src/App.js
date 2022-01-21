@@ -12,9 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 const App = (props) => {
-  console.log(props);
-
-  useEffect((props) => {
+  useEffect(() => {
     fetchSmurfs();
   }, []);
 
@@ -38,9 +36,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, {
-  fetchSmurfs,
-})(App);
+export default connect(mapStateToProps, fetchSmurfs())(App);
 
 //Task List:
 //1. Connect the fetchSmurfs actions to the App component.

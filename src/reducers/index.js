@@ -45,6 +45,8 @@ const reducer = (state = initialState, action) => {
     case ADD_VALUE_TO_ERROR:
       return {
         ...state,
+        smurfs: {},
+        isLoading: false,
         error: "something is wrong",
       };
     default:
