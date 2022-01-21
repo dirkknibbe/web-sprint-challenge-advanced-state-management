@@ -12,26 +12,26 @@ export const fetchSmurfs = () => (dispatch) => {
     .get("http://localhost:3333/smurfs")
     .then((resp) => {
       console.log(resp.data);
-      dispatch(fetchSuccess(resp.data[1]));
+      dispatch(fetchSuccess(resp.data[0]));
     })
-    .catch((err) => {
-      dispatch(fetchFail(err));
+    .catch((error) => {
+      dispatch(fetchFail(error));
     });
 };
 export const fetchStart = () => {
   return { type: FETCH_START };
 };
 
-export const fetchSuccess = (smurf) => {
-  return { type: FETCH_SUCCESS, payload: smurf };
+export const fetchSuccess = (smurfs) => {
+  return { type: FETCH_SUCCESS, payload: smurfs };
 };
 
 export const fetchFail = (errorMessage) => {
   return { type: FETCH_FAIL, payload: errorMessage };
 };
 
-export const addSmurf = (handleSubmit) => {
-  return { type: ADD_SMURF, payload: handleSubmit };
+export const addSmurf = () => {
+  return { type: ADD_SMURF, name: "", nickname: "", position: "", summary: "" };
 };
 
 export const addValueToError = () => {

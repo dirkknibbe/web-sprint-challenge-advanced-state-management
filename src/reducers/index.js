@@ -35,7 +35,6 @@ const reducer = (state = initialState, action) => {
         isLoading: false,
         error: "",
       };
-
     case ADD_SMURF:
       return {
         ...state,
